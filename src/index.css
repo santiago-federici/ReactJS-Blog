@@ -44,16 +44,11 @@
   }
 }
 
-html{
-    color-scheme: light dark;
-}
-
 body{
   width: 100dvw;
   height: 100dvh;
   font-size: var(--fs-300);
   font-family: var(--ff-base);
-  background: rgb(43, 43, 43);
   color: var(--clr-text);
 }
 
@@ -63,6 +58,12 @@ body{
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+html{
+  color-scheme: light dark;
+  background: var(--clr-surface);
+  color: var(--clr-text);
 }
 
 h1, h2, h3{

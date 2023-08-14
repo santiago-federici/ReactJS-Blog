@@ -1,0 +1,99 @@
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--clr-surface);
+    
+    width: min(100% - 3rem, 100%);
+    margin-inline: auto;
+    height: fit-content;
+    min-height: 100px;
+    max-height: 150px;
+}
+
+.logo{
+    /* mix-blend-mode: multiply; */
+    width: 250px;
+    /* height: 140px; */
+}
+
+.fausercircle{
+    font-size: 2.5rem;
+    display: none;
+    cursor: pointer;
+    color: var(--clr-secondary);
+}
+
+.btns-container{
+    display: flex;
+    gap: .5rem;
+}
+
+.login-btn,
+.register-btn{
+    background: var(--clr-primary);
+    text-decoration: none;
+    padding: .4rem 1rem;
+    border: none;
+    border-radius: .5rem;
+    text-align: center;
+}
+
+.login-btn > p,
+.register-btn > p{
+    color: rgb(0 0 0);
+    font-weight: 500;
+}
+
+.register-btn{
+    display: none;
+}
+
+.pages-list{
+    display: none;
+    gap: 1rem;
+    text-transform: uppercase;
+}
+
+.page-navlink{
+    text-decoration: none;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 2px;
+    color: var(--clr-text);
+}
+
+.page-navlink:hover{
+    color: var(--clr-primary);
+}
+
+.page-navlink::after{
+    content: '';
+    height: 3px;
+    background: var(--clr-primary);
+    width: 0%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transition: .3s all ease;
+}
+
+.page-navlink:hover::after{
+    width: 100%;
+    left: 0;
+}
+
+.active{
+    color: var(--clr-primary);
+}
+
+
+@media (min-width: 1024px){
+    .pages-list{
+        display: flex;
+    }
+
+    .register-btn{
+        display: block;
+    }
+}

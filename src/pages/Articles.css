@@ -1,0 +1,245 @@
+.articles-main{
+    background: var(--clr-surface);
+    width: min(100% - 3rem, 100%);
+    margin-inline: auto;
+    position: relative;
+}
+
+.articles-flow > *{
+    margin-top: 1em;
+}
+
+.searchbox{
+    background: none;
+    border: none;
+    padding: .4rem .3rem;
+    border-bottom: 1px solid var(--clr-secondary);
+    max-width: 400px;
+}
+
+.searchbox::placeholder{
+    color: var(--clr-secondary)
+}
+
+.article-cards-container > * + *{
+    margin-top: 2em;
+}
+
+
+.trending-container > * + *{
+    margin-top: 1em;
+}
+
+@media(min-width: 1024px){
+    .articles-main{
+        width: min(100% - 5rem, 100%);
+        display: grid;
+        place-content: center;
+        gap: 1.5rem;
+    }
+}    
+
+@media(min-width: 1500px){
+
+    .searchbox{
+        grid-area: searchbox;
+    }
+    
+    .foryou{
+        grid-area: foryou;
+    }
+    
+    .article-cards-container{
+        grid-area: articles;
+    }
+    
+    .trending-container{
+        grid-area: trending;
+    }
+    
+    .articles-main{
+        grid-template-rows: 70%, 30%;
+        grid-template-columns: repeat(2, auto);
+        grid-template-areas: "searchbox ."
+                            "foryou ."
+                            "articles trending";
+    }
+}
+
+
+
+/* ArticleCard */
+.article-card > * + *{
+    margin-top: 1em;
+    position: relative;
+    padding: 0 1rem 1rem;
+}
+
+.article-card{
+
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    box-shadow: 0 0 15px 4px rgb(0, 0, 0, .6);
+
+    position: relative;
+    overflow: hidden;
+
+    border-bottom-left-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+
+    max-width: 1300px;
+}
+
+.article-card > img{
+    width: 100%;
+    height: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.article-card__date{
+    position: absolute;
+    top: 0;    
+    right: 20px;
+    margin: 0 0 .5rem .5rem;
+    font-size: .7rem;
+    color: #949494;
+}
+
+.article-card__info{
+    overflow: hidden;
+    max-height: 30ch;
+}
+
+.article-card__info > * + *{
+    margin-top: .5em;
+}
+
+.article-card__info > h2{
+    color: var(--clr-primary);
+}
+
+.article-card__info > h2:hover{
+    color: var(--clr-accent);
+}
+
+.article-card__user{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    width: fit-content;
+}
+
+.article-card__user > div > p{
+    font-size: var(--fs-100);
+}
+
+.article-card__user-at{
+    color: #71767B;
+}
+
+.article-card__user > img{
+    border-radius: 50%;
+    width: 40px;
+    cursor: pointer;
+}
+
+.hiarrownarrowright{
+    z-index: 1;
+    color: rgb(0 0 0);
+    transition: .5s all ease;
+}
+
+.readmore-btn{
+    border: none;
+    border-top-left-radius: .5rem;
+    background: var(--clr-secondary);
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+
+    padding: .2rem 1rem;
+}
+
+.readmore-btn::before{
+    content: '';
+    position: absolute;
+    background: var(--clr-accent);
+    width: 0%;
+    height: 100%;
+    left: 0;
+    transition: .5s all ease;
+}
+
+.readmore-btn:hover::before{
+    width: 100%;
+}
+
+@media(min-width:1024px){
+    .article-card{
+        display: flex;
+        width: fit-content;
+        width: 100%;
+        max-width: 1100px;
+        height: 280px;
+        border-top-right-radius: .5rem;
+        border-bottom-right-radius: .5rem;
+        border-bottom-left-radius: 0;
+    }
+    
+    .article-card > * + *{
+        margin: 0;
+    }
+    
+    .article-card > img{
+        max-width: 280px;
+        max-height: 280px;
+    }
+
+    .article-card__date{
+        right: 20px;
+        top: 20px;
+    }
+
+    .article-card__info{
+        margin-bottom: 2rem;
+        padding: 0 3rem 0 1rem;
+    }
+
+    .article-card__info > * + *{
+        margin-top: .2em;
+    }
+
+    .article-card__user{
+        position: absolute;
+        top: 10px;
+        right: 150px;
+    }
+
+    .article-card__user > div > p{
+        font-size: var(--fs-200);
+    }
+}
+
+/* TrendingWriters */
+.trending-writers{
+    display: none;
+    gap: 1rem;
+    width: 100%;
+    padding: 1rem;
+    border-radius: .5rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    box-shadow: 0 0 15px 4px rgb(0, 0, 0, .6);
+}
+
+@media(min-width: 1500px){
+    .trending-writers{
+        display: grid;
+    }
+}

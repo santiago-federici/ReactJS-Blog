@@ -1,0 +1,80 @@
+.user-card{
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 2rem;
+    width: 400px;
+    height: 60px;
+    gap: .2rem;
+}
+
+.user-card-info > img{
+    width: 50px;
+    height: 50px;
+    border-radius: 1000px;
+}
+
+.user-card-info > div{
+    display: grid;
+    place-content: center;
+}
+
+.user-card-info{
+    display: flex;
+    gap: .5rem;
+}
+
+.user-card-name{
+    font-size: var(--fs-200);
+}
+.user-card-at{
+    font-size: var(--fs-200);
+    color: #71767B;
+}
+
+.follow-btn{
+    cursor: pointer;
+    border: none;
+    border-radius: 2rem;
+    background: var(--clr-primary);
+    padding: .3rem .7rem;
+    color: rgb(0 0 0);
+    font-weight: 500;
+}
+
+.stop-following-btn,
+.follow-btn-text{
+    font-size: var(--fs-200);
+}
+
+.is-following-btn{
+    color: rgb(255, 255, 255);
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.178);
+    width: 160px;
+}
+
+.stop-following-btn{
+    display: none;
+}
+
+.is-following-btn:hover{
+    background: rgba(100, 0, 0, 0.281);
+    border: 1px solid rgba(255, 0, 0, 0.281);
+    color: red;
+}
+
+.is-following-btn:hover .follow-btn-text{
+    display: none;
+}
+
+.is-following-btn:hover .stop-following-btn{
+    display: block;
+}
+
+
+@media(min-width: 1500px){
+    .user-card{
+        display: flex;
+    }
+}

@@ -1,3 +1,4 @@
+import './TrendingTopics.css'
 
 export function TrendingTopics() {
     return(

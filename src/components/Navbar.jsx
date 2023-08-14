@@ -1,7 +1,7 @@
-import Logo from '../assets/logo.jpg'
+import Logo from '../assets/logobg.jpg'
 import { FaUserCircle } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
-import './navbar.css'
+import './Navbar.css'
 
 export function NavBar() {
 

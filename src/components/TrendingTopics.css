@@ -1,0 +1,46 @@
+.topics-cards-container{
+    max-width: 100dvw;
+    padding: 1rem 1rem;
+    display: grid;
+    gap: .6rem;
+    border-radius: .5rem;
+
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    box-shadow: 0 0 15px 4px rgb(0, 0, 0, .6);
+}
+
+.topic-card{
+    display: grid;
+    width: 230px;
+    height: 350px;
+    border-radius: 1rem;
+    overflow: hidden;
+    color: var(--sixty-color);
+    box-shadow: 0 0 7px 1px rgba(0, 0, 0, .3);
+    position: relative;
+}
+
+.topic-card > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-position: center;
+}
+
+.topic-card__info{
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.topic-card__gotobtn{
+    background: var(--ten-color);
+    border: none;
+    border-radius: .5rem;
+    padding: .4rem 1rem;
+    font-weight: 700;
+}

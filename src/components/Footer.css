@@ -1,0 +1,146 @@
+.footer{
+    display: grid;
+    place-items: center;
+    gap: 2rem;
+    margin: 3rem 0 5rem 0;
+
+    width: min(100% - 3rem, 100%);
+    margin-inline: auto;
+    height: fit-content;
+}
+
+.socialmedia-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: .7rem;
+    gap: .8rem;
+    background: var(--clr-secondary);
+    border-radius: 1rem;
+}
+
+.siinstagram,
+.bstwitter,
+.fagithub,
+.bsfacebook,
+.bslinkedin,
+.bsyoutube{
+    font-size: 1.5rem;
+    z-index: 1;
+    color: rgb(0 0 0);
+}
+
+.copyright-container{
+    display: grid;
+    place-content: center;
+    gap: 2rem;
+    text-align: center;
+    padding: .5rem 0;
+    border-radius: 1rem;
+}
+
+@media (min-width: 500px){
+    
+    .siinstagram,
+    .bstwitter,
+    .fagithub,
+    .bsfacebook,
+    .bslinkedin,
+    .bsyoutube{
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 1024px){
+    .icon-container{
+        display: grid;
+        place-items: center;
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .instagram-container::before{
+        content: '';
+        position: absolute;
+        background: radial-gradient(
+            circle at 33% 100%,
+            #fed373 4%,
+            #f15245 30%,
+            #d92e7f 62%,
+            #9b36b7 85%,
+            #515ecf);
+        width: 100%;
+        height: 0%;
+        bottom: 0;
+        transition: .5s all ease;
+    }
+    
+    .twitter-container::before{
+        content: '';
+        position: absolute;
+        background: #1DA1F2;
+        width: 100%;
+        height: 0%;
+        bottom: 0;
+        transition: .5s all ease;
+    }
+
+    .github-container::before{
+        content: '';
+        position: absolute;
+        background: #171B23;
+        width: 100%;
+        height: 0%;
+        bottom: 0;
+        transition: .5s all ease;
+    }
+
+    .facebook-container::before{
+        content: '';
+        position: absolute;
+        background: #4267B2;
+        width: 100%;
+        height: 0%;
+        bottom: 0;
+        transition: .5s all ease;
+    }
+
+    .linkedin-container::before{
+        content: '';
+        position: absolute;
+        background: #0B66C3;
+        width: 100%;
+        height: 0%;
+        bottom: 0;
+        transition: .5s all ease;
+    }
+
+    .youtube-container::before{
+        content: '';
+        position: absolute;
+        background: #FF0000;
+        width: 100%;
+        height: 0%;
+        bottom: 0;
+        transition: .5s all ease;
+    }
+    
+    .icon-container:hover::before{
+        height: 100%;
+    }
+
+    .icon-container:hover .siinstagram,
+    .icon-container:hover .bstwitter,
+    .icon-container:hover .fagithub,
+    .icon-container:hover .bsfacebook,
+    .icon-container:hover .bslinkedin,
+    .icon-container:hover .bsyoutube
+    {
+        color: var(--clr-text);
+        transition: 1s all ease;
+        rotate: calc(360deg);
+    }
+}

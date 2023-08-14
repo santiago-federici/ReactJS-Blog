@@ -1,6 +1,14 @@
-export function Home() {
+import { TrendingTopics } from '../components/TrendingTopics'
+import './Home.css'
 
-    return(
-        <>Home</>
+export function Home() {
+    return (
+        <main className='home-main home-flow'>
+            <h1 className='home-title'>Welcome to InfoHub!</h1>
+
+            <TrendingTopics />
+
+            
+        </main>
     )
 }

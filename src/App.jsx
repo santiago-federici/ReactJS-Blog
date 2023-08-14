@@ -6,6 +6,7 @@ import { Another } from './pages/Another'
 import { BrowserRouter as Router } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import { NavBar } from './components/Navbar'
+import { Footer } from './components/Footer'
 
 function App() {
 
@@ -23,7 +24,7 @@ function App() {
               {/* <Route path="/login" element={<Login />} /> */}
           </Routes>
           {/* <MobileIcons /> */}
-          {/* <Footer /> */}
+          <Footer />
       </Router>
     </div>
   )

@@ -3,7 +3,7 @@
   --clr-surface: hsl(0, 0%, 90%);
   --clr-primary: hsl(206, 100%, 66.1%);
   --clr-secondary: hsl(0, 0%, 12%);
-  --clr-surface: hsl(152, 99%, 58.8%);
+  --clr-accent: hsl(152, 99%, 58.8%);
 
   --ff-base: 'Montserrat', sans-serif; 
   --ff-accent: 'Barlow Condensed', sans-serif; 
@@ -36,11 +36,12 @@
 
 @media(prefers-color-scheme: dark){
   :root{
-    --clr-text: hsl(204, 20%, 85%);
+    --clr-text: hsl(210, 4%, 81%);
     --clr-surface: hsl(0, 0%, 8%);
     --clr-primary: hsl(206, 100%, 66.1%);
     --clr-secondary: hsl(0, 0%, 98%);
     --clr-accent: hsl(152, 99%, 58.8%);
+    --clr-heading: hsl(0, 0%, 100%);
   }
 }
 
@@ -78,10 +79,14 @@ h3{
 }
 
 button{
-  border: none;
-  padding: .5rem 1rem;
-  border-radius: .5rem;
   background: var(--clr-primary);
+  text-decoration: none;
+  padding: 0.4rem 1rem;
+  border: none;
+  border-radius: 0.5rem;
+  text-align: center;
+  color: rgb(0 0 0);
+  font-weight: 500;
 }
 
 button:hover{

@@ -1,0 +1,128 @@
+.article-card > * + *{
+    margin-top: .7em;
+    position: relative;
+    padding: 0rem 0rem 0rem 1rem;
+}
+
+.article-card{
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    box-shadow: 0 0 15px 4px rgb(0, 0, 0, .6);
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    width: 100%;
+    max-width: 1100px;
+    max-height: fit-content;
+    border-top-right-radius: .5rem;
+    border-bottom-right-radius: .5rem;
+    border-bottom-left-radius: 0;
+}
+
+.article-card > img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: 280px;
+}
+
+.article-card__info{
+    display: grid;
+}
+
+.article-card__info-top{
+    display: flex;
+    justify-content: space-between;
+}
+
+.article-card__title{
+    text-decoration: none;
+}
+
+.article-card__title > h3{
+    text-decoration: none;
+    color: var(--clr-primary);
+    max-width: 32ch;
+}
+
+.article-card__title > h3:hover{
+    color: var(--clr-accent);
+}
+
+.article-card__info > p{
+    font-size: var(--fs-300);
+}
+
+.article-card__user{
+    display: flex;
+    gap: 5px;
+    width: fit-content;
+    align-items: flex-start;
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.article-card__user-at{
+    color: #71767B;
+}
+
+.article-card__user > img{
+    border-radius: 50%;
+    width: 40px;
+    cursor: pointer;
+}
+
+.article-card__user > div > p{
+    font-size: var(--fs-200);
+}
+
+.hiarrownarrowright{
+    z-index: 1;
+    color: rgb(0 0 0);
+    transition: .5s all ease;
+}
+
+.article-card__info-bottom{
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.readmore-btn{
+    border: none;
+    border-top-left-radius: .5rem;
+    background: var(--clr-secondary);
+
+    position: relative;
+    justify-self: flex-end;
+    max-width: fit-content;
+
+    overflow: hidden;
+
+    display: grid;
+    place-items: center;
+
+    padding: .2rem 1rem;
+}
+
+.readmore-btn::before{
+    content: '';
+    position: absolute;
+    background: var(--clr-accent);
+    width: 0%;
+    height: 100%;
+    left: 0;
+    transition: .5s all ease;
+}
+
+.readmore-btn:hover::before{
+    width: 100%;
+}
+
+.article-card__date{
+    align-self: flex-end;
+    margin-bottom: 5px; 
+    font-size: var(--fs-100);
+    color: #949494;
+}

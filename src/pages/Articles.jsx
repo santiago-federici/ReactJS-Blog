@@ -1,19 +1,26 @@
-
-import Raptor from '../assets/raptor.jpg'
+// import Raptor from '../assets/raptor.jpg'
 import  User  from '../assets/user.jpg'
 import { TrendingTopics } from '../components/TrendingTopics'
 import { TrendingWriters } from '../components/TrendingWriters'
 import { ArticleCard } from '../components/ArticleCard'
 
+import {useArticles} from '../hooks/useArticles'
+
 import './Articles.css'
+import { useEffect } from 'react'
 
 export function Articles() {
 
+    const {articles, getArticles} = useArticles()
 
     // useMemo --> Only if there are too many articles in the API.
     // Filter por catergorias: https://www.youtube.com/watch?v=B9tDYAZZxcE&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29 (midu)
 
+    useEffect(() => {
+        getArticles()
+    }, []);
     
+    const usableArticles = articles && articles.articles
 
     return (
         <main className='articles-main articles-flow'>
@@ -22,34 +29,24 @@ export function Articles() {
 
             <h2 className='foryou'>For you</h2>
 
-            <article className='article-cards-container'>
-                <ArticleCard 
-                date='2 weeks ago' 
-                userimg={ User } 
-                userName= 'Santi Federici' 
-                userat='@userat' 
-                title='Title' 
-                img={ Raptor } 
-                text='Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum neque sapiente repellendus reiciendis iste! Eum, possimus quod? Corrupti sapiente eius ipsa, soluta itaque incidunt omnis magni a ut fuga vero autem, fugiat commodi sit tempore, culpa minus delectus. Est quaerat omnis culpa iste molestiae, sint ducimus vel sed dolores? Modi, temporibus itaque rem reprehenderit nostrum adipisci mollitia? Ratione sequi tempora quas exercitationem,........' />
-                
-                <ArticleCard 
-                date='2 weeks ago' 
-                userimg={ User } 
-                userName= 'Mati Navio' 
-                userat='@userat' 
-                title='Title' 
-                img={ Raptor } 
-                text='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam facilis pariatur modi eum harum dolorem...' />
+            <section className='article-cards-container'>
+                {
+                    articles && (
+                        usableArticles.map(usableArticle => (
+                        <ArticleCard key={usableArticle.index}
+                        date={usableArticle.publishedAt} 
+                        userimg={ User } 
+                        userName={usableArticle.author} 
+                        userat='@userat' 
+                        title={usableArticle.title} 
+                        img={usableArticle.urlToImage} 
+                        text={usableArticle.description} />
+                        ))
 
-                <ArticleCard 
-                date='2 weeks ago' 
-                userimg={ User } 
-                userName= 'Exequiel Carizzo' 
-                userat='@userat' 
-                title='Title' 
-                img={ Raptor } 
-                text='Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsam facilis pariatur modi eum harum dolorem...' />
-            </article>
+
+                    )
+                }
+            </section>
 
 
 

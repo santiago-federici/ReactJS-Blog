@@ -9,9 +9,9 @@ export function LoadingMain() {
     return(
         <main className="loading-main loading-main--flow">
 
-            <div className="loading-searchbox"></div>
+            <div className="loading-searchbox shining"></div>
 
-            <div className="loading-foryou"></div>
+            <div className="loading-foryou shining"></div>
 
             <div className="loading-articles-container">
                 <LoadingArticle />

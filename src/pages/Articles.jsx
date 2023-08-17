@@ -20,7 +20,7 @@ export function Articles() {
     useEffect(() => {
         getArticles()
 
-        setTimeout(() => getArticles(), 9000)
+        setTimeout(() => getArticles(), 5000)
     }, []);
     
     const usableArticles = articles && articles.articles

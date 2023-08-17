@@ -62,6 +62,6 @@ export function ArticleCard({img, userimg, userName, userat, title, text, date})
                 <NavLink to={'/readmore'} className='readmore-btn'><HiArrowNarrowRight className='hiarrownarrowright' /></NavLink>
             </div>
         </section>
-        </article>
+      </article>
     )
 }

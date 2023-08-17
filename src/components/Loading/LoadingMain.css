@@ -18,11 +18,6 @@
     display: grid;
     place-content: center;
     
-    width: min(100% - 3rem, 100%);
-    margin-inline: auto;
-    
-    position: relative;
-
     gap: 1.5rem;
 }
 
@@ -52,12 +47,6 @@
 
 .loading-trending-container{
     display: grid;
-}
-
-@media(min-width: 1024px){
-    .loading-main{
-        width: min(100% - 3rem, 100%);
-    }
 }
 
 @media(min-width: 1500px){

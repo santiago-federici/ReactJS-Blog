@@ -1,10 +1,3 @@
-.articles-main{
-    background: var(--clr-surface);
-    width: min(100% - 3rem, 100%);
-    margin-inline: auto;
-    position: relative;
-}
-
 .articles-flow > *{
     margin-top: 1em;
 }
@@ -29,15 +22,6 @@
 .trending-container > * + *{
     margin-top: 1em;
 }
-
-@media(min-width: 1024px){
-    .articles-main{
-        width: min(100% - 5rem, 100%);
-        display: grid;
-        place-content: center;
-        gap: 1.5rem;
-    }
-}    
 
 @media(min-width: 1500px){
 

@@ -2,8 +2,6 @@
     display: grid;
     place-content: center;
     padding: 1rem;
-    width: min(100% - 3rem, 100%);
-    margin-inline: auto;
 }
 
 .new-article-card{

@@ -61,6 +61,22 @@ html{
   color: var(--clr-text);
 }
 
+main{
+  background: var(--clr-surface);
+  width: min(100% - 3rem, 100%);
+  margin-inline: auto;
+  position: relative;
+}
+
+@media(min-width: 1024px){
+  main{
+    width: min(100% - 5rem, 100%);
+    display: grid;
+    place-content: center;
+    gap: 1.5rem;
+  }
+}
+
 h1, h2, h3{
   font-family: var(--ff-accent);
   color: var(--clr-heading)

@@ -9,7 +9,7 @@ import { NavBar } from './components/Navbar'
 import { Footer } from './components/Footer'
 import { ReadMore } from './components/ReadMore'
 import { MobileIcons } from './components/MobileIcons'
-import { Login } from './components/Login'
+import { AuthForm } from './components/AuthForm/AuthForm'
 import { WriteArticle } from './components/WriteArticle'
 
 function App() {
@@ -25,7 +25,7 @@ function App() {
               <Route path="/profile" element={<Profile />} />
               <Route path="/writearticle" element={<WriteArticle />} />
               <Route path="/readmore" element={<ReadMore />} />
-              <Route path="/login" element={<Login />} />
+              <Route path="/login" element={<AuthForm />} />
           </Routes>
           <MobileIcons />
           <Footer />

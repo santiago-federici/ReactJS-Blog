@@ -1,35 +1,48 @@
-// import Raptor from '../assets/raptor.jpg'
-import  User  from '../assets/user.jpg'
-import { useEffect } from 'react'
 import { TrendingTopics } from '../components/TrendingTopics'
 import { TrendingWriters } from '../components/TrendingWriters'
-import { ArticleCard } from '../components/ArticleCard'
 import {useArticles} from '../hooks/useArticles'
 import { LoadingMain } from '../components/Loading/LoadingMain'
+import { useSearch } from '../hooks/useSearch'
+import { ArticlesContainer } from '../components/Articles/ArticlesContainer'
+import { useEffect } from 'react'
 
 import './Articles.css'
 
 export function Articles() {
 
-    const {articles, getArticles, isLoading} = useArticles()
+    const {search, setSearch, error} = useSearch()
+    const {articles, getArticles, isLoading} = useArticles({search})
 
-    
     // useMemo --> Only if there are too many articles in the API.
     // Filter por catergorias: https://www.youtube.com/watch?v=B9tDYAZZxcE&list=PLUofhDIg_38q4D0xNWp7FEHOTcZhjWJ29 (midu)
 
     useEffect(() => {
+        setSearch('bitcoin')
         getArticles()
+    }, [])
 
-        setTimeout(() => getArticles(), 5000)
-    }, []);
+    useEffect(() => {
+        // Preventing the articles to disappear
+        if(search !== ''){
+            getArticles()
+        }
+    }, [search])
     
-    const usableArticles = articles && articles.articles
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        // Preventing the articles to disappear
+        if(search !== ''){
+            getArticles()
+        }
+    }
+
+    const handleChange = (e) => {
+        const newSearch = e.target.value
+        if(newSearch.startsWith(' ')) return
+        setSearch(newSearch)
+      }
 
     return (
-
-        
-        
-            
         isLoading 
         ?
         <>
@@ -38,30 +51,20 @@ export function Articles() {
         :
         <>
             <main className='articles-main articles-flow'>
-                <input type="text" placeholder='Search a topic' className='searchbox' id='searchbox-input' />
+                <form onSubmit={handleSubmit}>
+                    <input 
+                    placeholder='Search a topic' 
+                    className='searchbox' 
+                    id='searchbox-input' 
+                    onChange={handleChange}
+                    value={search} />
+                    <button>Search</button>
+                    <p>{error}</p>
+                </form>
 
                 <h2 className='foryou'>For you</h2>
 
-                <section className='article-cards-container'>
-                    
-                    {articles && (
-                        usableArticles.map(usableArticle => (
-                        <ArticleCard key={usableArticle.index}
-                        date={usableArticle.publishedAt} 
-                        userimg={ User } 
-                        userName={usableArticle.author} 
-                        userat='@userat' 
-                        title={usableArticle.title} 
-                        img={usableArticle.urlToImage} 
-                        text={usableArticle.description} />
-                        ))
-                    )}
-                    
-                </section>
-
-
-
-
+                <ArticlesContainer articles={articles} />
 
                 <aside className='trending-container'>
                     <TrendingWriters />

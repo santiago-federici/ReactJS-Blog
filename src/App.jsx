@@ -7,7 +7,7 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import { Routes, Route } from 'react-router-dom'
 import { NavBar } from './components/Navbar'
 import { Footer } from './components/Footer'
-import { ReadMore } from './components/ReadMore'
+// import { ReadMore } from './components/Articles/ReadMore'
 import { MobileIcons } from './components/MobileIcons'
 import { AuthForm } from './components/AuthForm/AuthForm'
 import { WriteArticle } from './components/WriteArticle'
@@ -24,7 +24,7 @@ function App() {
               <Route path="/another" element={<Another />} />
               <Route path="/profile" element={<Profile />} />
               <Route path="/writearticle" element={<WriteArticle />} />
-              <Route path="/readmore" element={<ReadMore />} />
+              {/* <Route path="/readmore" element={<ReadMore />} /> */}
               <Route path="/login" element={<AuthForm />} />
           </Routes>
           <MobileIcons />

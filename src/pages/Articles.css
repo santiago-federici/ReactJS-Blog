@@ -39,6 +39,7 @@
     
     .trending-container{
         grid-area: trending;
+        position: relative;
     }
     
     .articles-main{
@@ -111,14 +112,15 @@
 
 .hiarrownarrowright{
     z-index: 1;
-    color: rgb(0 0 0);
     transition: .5s all ease;
+    color: rgb(0 0 0);
 }
 
 .readmore-btn{
     border: none;
     border-top-left-radius: .5rem;
     background: var(--clr-secondary);
+    cursor: pointer;
 
     position: relative;
     justify-self: flex-end;
@@ -197,22 +199,6 @@
         max-width: 1300px;
     }
 
-    .readmore-btn{
-        border: none;
-        border-top-left-radius: .5rem;
-        background: var(--clr-secondary);
-
-        justify-self: flex-end;
-        max-width: fit-content;
-
-        overflow: hidden;
-
-        display: grid;
-        place-items: center;
-
-        padding: .2rem 1rem;
-    }
-
     .article-card__user{
         position: absolute;
         bottom: 10px;
@@ -227,7 +213,6 @@
     }
     
     .article-card{
-        position: relative;
         overflow: hidden;
     
         display: flex;
@@ -284,8 +269,9 @@
     }
 }
 
-/* ReadMore */
 
+
+/* ReadMore */
 .readmore-card{
     margin: 1rem;
     display: grid;

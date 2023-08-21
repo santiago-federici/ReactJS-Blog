@@ -1,12 +1,11 @@
-import User from '../assets/user.jpg'
-import Car from '../assets/car.jpg'
+import Car from '../../assets/car.jpg'
+import User from '../../assets/user.jpg'
 
 import { BiLike } from 'react-icons/bi'
 import { AiFillLike } from 'react-icons/ai'
 import { FaRegComment } from 'react-icons/fa'
 import { BsBookmark, BsFillBookmarkFill } from 'react-icons/bs'
 import { HiArrowNarrowLeft } from 'react-icons/hi'
-
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
@@ -20,7 +19,9 @@ export function ReadMore() {
 
     return(
         <section className='readmore-card readmore-flow'>
+        
         <NavLink to={'/articles'}><HiArrowNarrowLeft className='back-articles-arrow' /></NavLink>
+
             <img src={ Car } alt="" />
             <div className='readmore-card__info'>
                 <div className='readmore-card__user'>

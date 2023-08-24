@@ -10,6 +10,22 @@
 }
 
 .topic-card{
+    border: 1px solid rgba(255, 255, 255, 0.096);
+    box-shadow: 0 0 8px 4px rgb(0, 0, 0, .6);
+    border-radius: .5rem;
+    width: fit-content;
+    padding: .3rem;
+}
+
+.topic-card:hover{
+    cursor: pointer;
+}
+
+.topic-card:hover > h3{
+    color: var(--clr-accent);
+}
+
+/* .topic-card{
     display: grid;
     width: 230px;
     height: 350px;
@@ -43,4 +59,4 @@
     border-radius: .5rem;
     padding: .4rem 1rem;
     font-weight: 700;
-}
+} */

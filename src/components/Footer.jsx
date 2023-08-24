@@ -1,16 +1,13 @@
 import { SiInstagram } from 'react-icons/si'
-import { BsTwitter } from 'react-icons/bs'
+import { BsTwitter, BsFacebook, BsLinkedin, BsYoutube } from 'react-icons/bs'
 import { FaGithub } from 'react-icons/fa'
-import { BsFacebook } from 'react-icons/bs'
-import { BsLinkedin } from 'react-icons/bs'
-import { BsYoutube } from 'react-icons/bs'
 
 import { NavLink } from 'react-router-dom'
 
 import './Footer.css'
 
-export function Footer() {
-    return (
+export function Footer () {
+  return (
         <footer className='footer'>
             <section className='socialmedia-container'>
                     <NavLink className={'icon-container instagram-container'} to={'https://www.instagram.com/santi_federici/'}>
@@ -43,5 +40,5 @@ export function Footer() {
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque, nulla, veritatis voluptates nemo corporis aliquid assumenda aut rerum distinctio, officiis repellat minima? Assumenda veniam fugiat quo quasi dolor esse doloremque.</p>
             </section>
         </footer>
-    )
+  )
 }

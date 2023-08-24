@@ -3,9 +3,8 @@ import { FaUserCircle } from 'react-icons/fa'
 import { NavLink } from 'react-router-dom'
 import './Navbar.css'
 
-export function NavBar() {
-
-    return (
+export function NavBar () {
+  return (
         <header>
             <nav className='navbar'>
             <img src={ Logo } alt='' className='logo' />
@@ -24,5 +23,5 @@ export function NavBar() {
                 </div>
             </nav>
         </header>
-    )
+  )
 }

@@ -1,8 +1,5 @@
-
-
-export function LoginForm() {
-
-    return(
+export function LoginForm () {
+  return (
         <>
             <h2>Login</h2>
 
@@ -14,5 +11,5 @@ export function LoginForm() {
                 <button>Reset</button>
             </div>
         </>
-    )
+  )
 }

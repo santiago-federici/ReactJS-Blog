@@ -1,7 +1,5 @@
-
-export function RegisterForm() {
-
-    return(
+export function RegisterForm () {
+  return (
         <>
           <h2>Register</h2>
 
@@ -15,5 +13,5 @@ export function RegisterForm() {
             <button>Reset</button>
           </div>
         </>
-    )
+  )
 }

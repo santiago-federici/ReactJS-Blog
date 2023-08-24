@@ -1,6 +1,5 @@
-export function Another() {
-
-    return(
+export function Another () {
+  return (
         <>Another</>
-    )
+  )
 }

@@ -1,6 +1,4 @@
-
-export function LoadingArticle() {
-
+export function LoadingArticle () {
   return (
     <article className='loading-card'>
 
@@ -11,7 +9,7 @@ export function LoadingArticle() {
 
         <div className='loading-card__text shining'></div>
       </div>
-      
+
     </article>
   )
 }

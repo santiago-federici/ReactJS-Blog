@@ -1,25 +1,23 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react'
 
-export function useSearch() {
-    const [search, setSearch] = useState('')
-    const [error, setError] = useState(null)
-    const isFirstInput = useRef(true)
-    
-    useEffect(() => {
-        if(isFirstInput.current){
-            isFirstInput.current = search == ''
-            return
-        }
+export function useSearch () {
+  const [search, setSearch] = useState('')
+  const [error, setError] = useState(null)
+  const isFirstInput = useRef(true)
 
-        if(search == ''){
-            setError('The search field can not be empty')
-            return
-        }
+  useEffect(() => {
+    if (isFirstInput.current) {
+      isFirstInput.current = search == ''
+      return
+    }
 
-        setError(null)
-    }, [search]);
+    if (search == '') {
+      setError('The search field can not be empty')
+      return
+    }
 
+    setError(null)
+  }, [search])
 
-
-    return {search, setSearch, error}
+  return { search, setSearch, error }
 }

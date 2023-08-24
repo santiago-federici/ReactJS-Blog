@@ -9,17 +9,15 @@ import { HiArrowNarrowLeft } from 'react-icons/hi'
 import { NavLink } from 'react-router-dom'
 import { useState } from 'react'
 
-export function ReadMore() {
+export function ReadMore () {
+  const [isBookmarked, setIsBookmarked] = useState(false)
+  const [isLiked, setIsLike] = useState(false)
+  const likes = 15
+  const comments = 3
 
-    let [isBookmarked, setIsBookmarked] = useState(false)
-    let [isLiked, setIsLike] = useState(false)
-    let likes = 15
-    let comments = 3
-
-
-    return(
+  return (
         <section className='readmore-card readmore-flow'>
-        
+
         <NavLink to={'/articles'}><HiArrowNarrowLeft className='back-articles-arrow' /></NavLink>
 
             <img src={ Car } alt="" />
@@ -36,31 +34,27 @@ export function ReadMore() {
                 <div className='interaction-icons-container'>
                     {
                         isLiked
-                        ?
-                        <AiFillLike className='aifilllike' onClick={() => {
+                          ? <AiFillLike className='aifilllike' onClick={() => {
                             setIsLike(false)
-                        }} />
-                        :
-                        <BiLike className='bilike' onClick={() => {
+                          }} />
+                          : <BiLike className='bilike' onClick={() => {
                             setIsLike(true)
-                        }} />
+                          }} />
                     }
                     <p>{likes}</p>
                     <FaRegComment className='faregcomment' />
                     <p>{comments}</p>
                     {
                         isBookmarked
-                        ?
-                        <BsFillBookmarkFill className='bsfillbookmarkfill' onClick={() => {
+                          ? <BsFillBookmarkFill className='bsfillbookmarkfill' onClick={() => {
                             setIsBookmarked(false)
-                        }} />
-                         :
-                        <BsBookmark className='bsbookmark' onClick={() => {
+                          }} />
+                          : <BsBookmark className='bsbookmark' onClick={() => {
                             setIsBookmarked(true)
-                        }} />
+                          }} />
                     }
                 </div>
             </div>
         </section>
-    )
+  )
 }

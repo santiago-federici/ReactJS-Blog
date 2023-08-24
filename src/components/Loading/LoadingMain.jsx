@@ -1,12 +1,11 @@
-import { LoadingArticle } from "./LoadingArticle";
-import { LoadingTopics } from "./LoadingTopics";
-import { LoadingWriters } from "./LoadingWriters";
+import { LoadingArticle } from './LoadingArticle'
+import { LoadingTopics } from './LoadingTopics'
+import { LoadingWriters } from './LoadingWriters'
 
 import './LoadingMain.css'
 
-export function LoadingMain() {
-
-    return(
+export function LoadingMain () {
+  return (
         <main className="loading-main loading-main--flow">
 
             <div className="loading-searchbox shining"></div>
@@ -18,12 +17,12 @@ export function LoadingMain() {
                 <LoadingArticle />
                 <LoadingArticle />
             </div>
-        
+
             <div className="loading-trending-container">
                 <LoadingWriters />
 
                 <LoadingTopics />
             </div>
         </main>
-    )
+  )
 }

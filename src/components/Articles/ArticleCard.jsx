@@ -2,37 +2,32 @@ import User from '../../assets/user.jpg'
 
 import { HiArrowNarrowRight } from 'react-icons/hi'
 import { NavLink } from 'react-router-dom'
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react'
 
-
-export function ArticleCard({ img, userImg, userName, userAt, title, text, date, url }) {
-
-  const divRef = useRef(null);
-  const imgRef = useRef(null);
-  const [divHeight, setDivHeight] = useState(0);
+export function ArticleCard ({ img, userImg, userName, userAt, title, text, date, url }) {
+  const divRef = useRef(null)
+  const imgRef = useRef(null)
+  const [divHeight, setDivHeight] = useState(0)
 
   useEffect(() => {
     if (divRef.current) {
-      setDivHeight(divRef.current.clientHeight);
+      setDivHeight(divRef.current.clientHeight)
     }
-  }, []);
+  }, [])
 
   useEffect(() => {
     if (imgRef.current) {
-      imgRef.current.style.height = `${divHeight}px`;
+      imgRef.current.style.height = `${divHeight}px`
     }
-  }, [divHeight]);
-
-
+  }, [divHeight])
 
   // Formatting 'date'
-  const dateTime = new Date(date);
+  const dateTime = new Date(date)
 
-  const formattedDate = dateTime.toLocaleDateString();
-  const formattedTime = dateTime.toLocaleTimeString(); //Only use for 'readmore' page
+  const formattedDate = dateTime.toLocaleDateString()
+  const formattedTime = dateTime.toLocaleTimeString() // Only use for 'readmore' page
 
   return (
-
 
     <article className='article-card' ref={divRef}>
 
@@ -55,7 +50,6 @@ export function ArticleCard({ img, userImg, userName, userAt, title, text, date,
         </div>
 
         <p>{text}</p>
-
 
         <div className='article-card__info-bottom'>
           <span className='article-card__date'>{formattedDate}</span>

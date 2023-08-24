@@ -1,6 +1,5 @@
-export function Profile() {
-
-    return(
+export function Profile () {
+  return (
         <>Profile</>
-    )
+  )
 }

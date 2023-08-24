@@ -4,15 +4,13 @@ import { RegisterForm } from './RegisterForm'
 
 import './AuthForm.css'
 
-
-export function AuthForm() {
-
+export function AuthForm () {
   const [isLoginSelected, setIsLoginSelected] = useState(true)
 
   const handleChange = () => {
     setIsLoginSelected(!isLoginSelected)
   }
-  
+
   return (
     <main className='user-account'>
       <form className='data-container'>
@@ -24,10 +22,8 @@ export function AuthForm() {
 
         {
           isLoginSelected
-          ?
-          <LoginForm />
-          :
-          <RegisterForm />
+            ? <LoginForm />
+            : <RegisterForm />
         }
 
       </form>

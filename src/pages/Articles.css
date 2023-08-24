@@ -51,6 +51,16 @@
     }
 }
 
+.search-container{
+    display: flex;
+    gap: 2rem;
+}
+
+.search-btn{
+    display: grid;
+    place-content: center;
+}
+
 
 
 /* ArticleCard */

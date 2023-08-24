@@ -1,16 +1,13 @@
 import { useState } from 'react'
 import './Usercard.css'
 
-export function UserCard({userImg, userName, userAt, initialIsFollowing}) {
+export function UserCard ({ userImg, userName, userAt, initialIsFollowing }) {
+  const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
 
-    const [isFollowing, setIsFollowing] = useState(initialIsFollowing)
+  const btnText = isFollowing ? 'Following' : 'Follow'
+  const btnClassName = isFollowing ? 'follow-btn is-following-btn' : 'follow-btn'
 
-
-    const btnText = isFollowing ? "Following" : "Follow"
-    const btnClassName = isFollowing ? "follow-btn is-following-btn" : "follow-btn"
-
-
-    return(
+  return (
         <div className='user-card'>
                 <div className='user-card-info'>
                     <img src={ userImg } alt="" />
@@ -25,5 +22,5 @@ export function UserCard({userImg, userName, userAt, initialIsFollowing}) {
                     <p className='stop-following-btn'>Stop following</p>
                 </button>
         </div>
-    )
+  )
 }

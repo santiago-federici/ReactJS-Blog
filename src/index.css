@@ -1,12 +1,14 @@
-:root{
+:root {
+  --clr-heading: hsl(0, 0%, 0%);
   --clr-text: hsl(204, 20%, 10%);
   --clr-surface: hsl(0, 0%, 90%);
   --clr-primary: hsl(206, 100%, 66.1%);
   --clr-secondary: hsl(0, 0%, 12%);
   --clr-accent: hsl(152, 99%, 58.8%);
 
-  --ff-base: 'Montserrat', sans-serif; 
-  --ff-accent: 'Barlow Condensed', sans-serif; 
+
+  --ff-base: 'Montserrat', sans-serif;
+  --ff-accent: 'Barlow Condensed', sans-serif;
 
   /* Step -2: 12.50px → 10.00px */
   --fs-100: clamp(0.63rem, calc(0.84rem + -0.27vw), 0.78rem);
@@ -34,20 +36,20 @@
 }
 
 
-@media(prefers-color-scheme: dark){
-  :root{
+@media(prefers-color-scheme: dark) {
+  :root {
+    --clr-heading: hsl(0, 0%, 100%);
     --clr-text: hsl(210, 4%, 81%);
     --clr-surface: hsl(0, 0%, 8%);
     --clr-primary: hsl(206, 100%, 66.1%);
     --clr-secondary: hsl(0, 0%, 98%);
     --clr-accent: hsl(152, 99%, 58.8%);
-    --clr-heading: hsl(0, 0%, 100%);
   }
 }
 
 *,
 *::before,
-*::after{
+*::after {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -55,21 +57,21 @@
   font-family: var(--ff-base);
 }
 
-html{
+html {
   color-scheme: light dark;
   background: var(--clr-surface);
   color: var(--clr-text);
 }
 
-main{
+main {
   background: var(--clr-surface);
   width: min(100% - 3rem, 100%);
   margin-inline: auto;
   position: relative;
 }
 
-@media(min-width: 1024px){
-  main{
+@media(min-width: 1024px) {
+  main {
     width: min(100% - 5rem, 100%);
     display: grid;
     place-content: center;
@@ -77,24 +79,26 @@ main{
   }
 }
 
-h1, h2, h3{
+h1,
+h2,
+h3 {
   font-family: var(--ff-accent);
   color: var(--clr-heading)
 }
 
-h1{
+h1 {
   font-size: var(--fs-600);
 }
 
-h2{
+h2 {
   font-size: var(--fs-500);
 }
 
-h3{
+h3 {
   font-size: var(--fs-400);
 }
 
-button{
+button {
   background: var(--clr-primary);
   text-decoration: none;
   padding: 0.4rem 1rem;
@@ -105,17 +109,17 @@ button{
   font-weight: 500;
 }
 
-button:hover{
+button:hover {
   opacity: .7;
   cursor: pointer;
 }
 
-img{
+img {
   max-width: 100%;
   display: block;
 }
 
-input{
+input {
   padding: .25rem .7rem;
   border: 1px solid rgba(255, 255, 255, 0.103);
   background: transparent;
@@ -123,6 +127,6 @@ input{
   border-bottom: 1px solid var(--clr-text);
 }
 
-input:focus{
+input:focus {
   outline: none;
 }

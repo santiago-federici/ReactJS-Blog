@@ -1,5 +1,4 @@
-.topics-cards-container{
-    max-width: 100dvw;
+.topics-cards-container {
     padding: 1rem 1rem;
     display: grid;
     gap: .6rem;
@@ -9,19 +8,18 @@
     box-shadow: 0 0 15px 4px rgb(0, 0, 0, .6);
 }
 
-.topic-card{
-    border: 1px solid rgba(255, 255, 255, 0.096);
-    box-shadow: 0 0 8px 4px rgb(0, 0, 0, .6);
-    border-radius: .5rem;
-    width: fit-content;
-    padding: .3rem;
+.topic-card {
+    position: relative;
+    transition: .3s;
+    display: flex;
 }
 
-.topic-card:hover{
+.topic-card:hover {
     cursor: pointer;
+    scale: 1.05;
 }
 
-.topic-card:hover > h3{
+.topic-card:hover>h3 {
     color: var(--clr-accent);
 }
 

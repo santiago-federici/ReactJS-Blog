@@ -9,7 +9,7 @@ import { BiSearchAlt } from 'react-icons/bi'
 
 import './Articles.css'
 
-export function Articles () {
+export function Articles() {
   const { search, setSearch, error } = useSearch()
   const { articles, getArticles, isLoading } = useArticles({ search })
 
@@ -42,40 +42,35 @@ export function Articles () {
     setSearch(newSearch)
   }
 
-  return isLoading
-    ? (
-      <>
-        <LoadingMain />
+  return (
+    isLoading
+      ? <>
+        < LoadingMain />
       </>
-      )
-    : (
-      <>
-        z
-        <main className="articles-main articles-flow">
-          <form onSubmit={handleSubmit} className="search-container">
-            <input
-              placeholder="Search a topic"
-              className="searchbox"
-              id="searchbox-input"
-              onChange={handleChange}
-              value={search}
-            />
-            <button className="search-btn">
-              <BiSearchAlt />
-            </button>
-            <p>{error}</p>
-          </form>
+      : <main className="articles-main articles-flow">
+        <form onSubmit={handleSubmit} className="search-container">
+          <input
+            placeholder="Search a topic"
+            className="searchbox"
+            id="searchbox-input"
+            onChange={handleChange}
+            value={search}
+          />
+          <button className="search-btn">
+            <BiSearchAlt />
+          </button>
+          <p>{error}</p>
+        </form>
 
-          <h2 className="foryou">For you</h2>
+        <h2 className="foryou">For you</h2>
 
-          <ArticlesContainer articles={articles} />
+        <ArticlesContainer articles={articles} />
 
-          <aside className="trending-container">
-            <TrendingWriters />
+        <aside className="trending-container">
+          <TrendingWriters />
 
-            <TrendingTopics getArticles={getArticles} setSearch={setSearch} />
-          </aside>
-        </main>
-      </>
-      )
+          <TrendingTopics getArticles={getArticles} setSearch={setSearch} />
+        </aside>
+      </main>
+  )
 }

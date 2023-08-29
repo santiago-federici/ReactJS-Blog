@@ -1,14 +1,13 @@
 import './TrendingTopics.css'
 
-export function TrendingTopics ({ getArticles, setSearch }) {
-  const handleClick = (e) => {
-    setSearch(e.target.value) // not working correctly
-    getArticles()
-  }
+export function TrendingTopics({ getArticles, setSearch }) {
+  // const handleClick = (e) => {
+  //   setSearch(e.target.value) // not working correctly
+  //   getArticles()
+  // }
 
   return (
     <div className='topics-cards-container'>
-      <h2>Trending Topics</h2>
       <h2>Trending Topics</h2>
       {/* <section className='topic-card'>
           <img
@@ -20,7 +19,7 @@ export function TrendingTopics ({ getArticles, setSearch }) {
           </div>
       </section> */}
 
-      <section className='topic-card' onClick={handleClick}>
+      <section className='topic-card'>
         <h3>#BITCOIN</h3>
       </section>
       <section className='topic-card'>
